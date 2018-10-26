@@ -20,7 +20,6 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
 						<div class="row">
-							<!-- <img src="img/lo2.png" style="height: 100px;" alt=""> -->
                             <strong><h1>Selamat Datang</h1></strong>
                                         <h3>Silahkan Login</h3>
 							<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
@@ -33,7 +32,6 @@
 								</div>
 							
 											
-								<!-- <a href="#" class="btn btn-defualt">Login</a> -->
 								<input type="submit" name="login" class="btn btn-primary btn-block" value="Login" /><br>
 
 									</div>
@@ -42,8 +40,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- <br><br><br><br>
-					<p style="text-align: center; color: #000;"><span></span>Made with <span style="font-size:120%;color:red;">&hearts;</span> | Copyright &copy; <a href="index.php"><strong>Karimah Hijab Store 2018</strong></a> </p> -->
+				
 </body>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
