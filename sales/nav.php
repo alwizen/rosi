@@ -1,3 +1,14 @@
+<?php
+session_start(); //memulai session
+if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
+{
+  header('location:./../' . $_SESSION['akses']); //alihkan halaman
+  exit();
+} else { //jika ada session
+  $nama = $_SESSION['nama_u']; //menyimpan session nama ke variabel $nama
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,7 +161,15 @@
                   </ul>
                 </li>
 
-                <li><a href=""><strong>Logout</strong></a><li>
+                <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#"class="dropdown-toggle" data-toggle="dropdown" ><strong><span class="glyphicon glyphicon-share"></span> Lainnya</strong> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class=""><a href="../logout.php" onclick="return confirm('Yakin ingin Logout?')">Keluar (<b> <?php echo $nama; ?> </b>)</a></li>
+                  </ul>
+                </li>
+
+            </ul>
               
               </ul>
 

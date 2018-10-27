@@ -2,7 +2,7 @@
 $url = 'http://localhost/rosi';
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'BAba55ko';
 $dbname = 'rosi';
 
 $koneksi = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);  //koneksi Database

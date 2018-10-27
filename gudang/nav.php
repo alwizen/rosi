@@ -2,10 +2,10 @@
 session_start(); //memulai session
 if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
 {
-  header('location:./../' . $_SESSION['akses']); //alihkan halaman
-  exit();
+    header('location:./../' . $_SESSION['akses']); //alihkan halaman
+    exit();
 } else { //jika ada session
-  $nama = $_SESSION['nama_u']; //menyimpan session nama ke variabel $nama
+    $nama = $_SESSION['nama_u']; //menyimpan session nama ke variabel $nama
 }
 
 ?>

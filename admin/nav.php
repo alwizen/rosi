@@ -10,8 +10,8 @@
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
   
-  <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.min.js"></script>
   <script src="../js/datatables.min.js"></script>
   
   <style>

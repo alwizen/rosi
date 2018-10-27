@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Enditha Froozen</title>
+	<title></title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
                             <strong><h1>Selamat Datang</h1></strong>
                                         <h3>Silahkan Login</h3>
 							<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
-							<form action="sales/index.php" method="POST">
+							<form action="prosesLogin.php" method="POST">
 								<div class="form-group">
 							  		<input type="text" class="form-control" name="username" placeholder="User Name" id="">
 								</div>
