@@ -138,7 +138,7 @@ if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="../img/logo2.png"></a>
+          <a class="navbar-brand" href="index.php"><img src="../img/logo.png"></a>
         </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">

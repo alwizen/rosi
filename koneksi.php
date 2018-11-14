@@ -1,5 +1,5 @@
 <?php
-$url = 'http://localhost/rosi';
+$url    = 'http://localhost/rosi';
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = 'BAba55ko';

@@ -1,3 +1,14 @@
+<?php
+session_start(); //memulai session
+if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
+{
+  header('location:./../' . $_SESSION['akses']); //alihkan halaman
+  exit();
+} else { //jika ada session
+  $nama = $_SESSION['nama_u']; //menyimpan session nama ke variabel $nama
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +16,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <!-- <link rel="icon" href="../img/logo1.png"> -->
+  <link rel="icon" href="../img/logoo.png">
   <!-- Bootstrap -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
@@ -127,7 +138,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="../img/logo2.png"></a>
+          <a class="navbar-brand" href="index.php"><img src="../img/logo.png"></a>
         </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -135,12 +146,9 @@
               <li class="dropdown">
                 <a href="#"class="dropdown-toggle" data-toggle="dropdown" ><strong> Master</strong> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="list_barang.php">Data Barang</a></li>
-                    <li><a href="list_kategori.php">Data Pelanggan</a></li>
-                    <li><a href="list_supplier.php">Data Sales</a></li>
-                    <li><a href="list_supplier.php">Data Gudang</a></li>
-                    <li><a href="list_supplier.php">Data Pengiriman</a></li>
-                    <li><a href="list_user.php">Data User</a></li>
+                  <li><a href="barang.php">Data Barang</a></li>
+                    <li><a href="pelanggan.php">Data Pelanggan</a></li>
+                    <li><a href="user.php">Data User</a></li>
                 </ul>
               </li>
 
@@ -148,9 +156,9 @@
                 <li class="dropdown">
                   <a href="#"class="dropdown-toggle" data-toggle="dropdown" ><strong> Transaksi</strong> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="trans_pembelian.php">Pembelian Barang</a></li>
-                    <li><a href="list_trans_penjualan.php">Detail Penjualan</a></li>
-                    <li><a href="list_trans_pembelian.php">Detail Pembelian</a></li>
+                    <li><a href="listPenjualan.php">Detail Penjualan</a></li>
+                    <li><a href="transPenjualan.php">Transaksi Penjualan</a></li>
+                    <li><a href="pengiriman.php">Pengiriman</a></li>
                   </ul>
                 </li>
 
