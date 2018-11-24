@@ -27,92 +27,72 @@ if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
   
   <style>
 .navbar-default {
-  background-color: #035390;
-  border-color: #07416d;
+  background-color: #10854c;
+  border-color: #188550;
 }
 .navbar-default .navbar-brand {
-  color: #ecf0f1;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #f2f1f4;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-text {
-  color: #ecf0f1;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ecf0f1;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #f2f1f4;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #035390;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ecf0f1;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #f2f1f4;
-  background-color: #07416d;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #07416d;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #f2f1f4;
-  background-color: #07416d;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #f2f1f4;
-  background-color: #07416d;
+  color: #f5f5f5;
+  background-color: #188550;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #f2f1f4;
-  background-color: #07416d;
+  color: #f5f5f5;
+  background-color: #188550;
 }
 .navbar-default .navbar-toggle {
-  border-color: #07416d;
+  border-color: #188550;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #07416d;
+  background-color: #188550;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ecf0f1;
+  background-color: #f5f5f5;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #ecf0f1;
+  border-color: #f5f5f5;
 }
 .navbar-default .navbar-link {
-  color: #ecf0f1;
+  color: #f5f5f5;
 }
 .navbar-default .navbar-link:hover {
-  color: #f2f1f4;
+  color: #f5f5f5;
 }
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1;
+    color: #f5f5f5;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #f2f1f4;
+    color: #f5f5f5;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #f2f1f4;
-    background-color: #07416d;
+    color: #f5f5f5;
+    background-color: #188550;
   }
 }
 .navbar-brand>img {
@@ -146,12 +126,7 @@ if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
               <li class="dropdown">
                 <a href="#"class="dropdown-toggle" data-toggle="dropdown" ><strong> Master</strong> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="list_barang.php">Data Barang</a></li>
-                    <li><a href="list_kategori.php">Data Pelanggan</a></li>
-                    <li><a href="list_supplier.php">Data Sales</a></li>
-                    <li><a href="list_supplier.php">Data Gudang</a></li>
-                    <li><a href="list_supplier.php">Data Pengiriman</a></li>
-                    <li><a href="list_user.php">Data User</a></li>
+                  <li><a href="barang.php">Data Semua Barang</a></li>
                 </ul>
               </li>
 

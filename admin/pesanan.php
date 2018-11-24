@@ -9,11 +9,9 @@ include '../fungsi/rupiah.php';
 <link rel="stylesheet" href="../css/jquery-ui.css">
 
 <div class="container">
-    <a href="transaksi.php" class="btn btn-primary">Tambah Pesanan</a>
-    <a href="pelanggan.php" class="btn btn-default">List Pelanggan</a><br><br>
   <div class="panel panel-primary">
   <!-- Default panel contents -->
-    <div class="panel-heading"><strong>Semua Pesanan</strong></div>
+    <div class="panel-heading"><strong>Detail Pembelian</strong></div>
     <div class="panel-body">
    
         <div>

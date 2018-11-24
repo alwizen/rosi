@@ -14,14 +14,14 @@ include '../koneksi.php';
       <div class="col-md-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title"><span class="glyphicon glyphicon-tag"></span><strong> Form Transaksi Penjualan</strong></h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-tag"></span><strong> Form Transaksi Pemesanan</strong></h3>
           </div>
           <div class="panel-body">
             <!-- <form id="form_input" action="proses/proses.php" method="post"> -->
 
                 <!-- tanggal dan model  -->
                  <div class="row">
-                   <input type="text" name="sales" id="sales" value="<?php echo $nama; ?>" class="form-control" readonly/>
+                   <input type="hidden" name="sales" id="sales" value="<?php echo $nama; ?>" class="form-control" readonly/>
                    <div class="col-xs-2 form-group">
                      <label>Tanggal</label>
                         <input type="date" name="tanggal" id="tanggal"  class="form-control" required />
@@ -29,9 +29,9 @@ include '../koneksi.php';
 
 
                       <?php
-                      $query = "SELECT * FROM pelanggan";
-                      $result = mysqli_query($koneksi, $query);
-                      ?>
+                        $query = "SELECT * FROM pelanggan";
+                        $result = mysqli_query($koneksi, $query);
+                        ?>
 
                   <div class="col-xs-4 form-group">
                      <label>Pelanggan</label>

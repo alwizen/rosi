@@ -158,6 +158,7 @@ if (!isset($_SESSION['nama_u'])) //jika session nama tidak ada
                   <ul class="dropdown-menu">
                     <li><a href="listPenjualan.php">Detail Penjualan</a></li>
                     <li><a href="transPenjualan.php">Transaksi Penjualan</a></li>
+                    <li><a href="pesanan.php">Pesanan</a></li>
                     <li><a href="pengiriman.php">Pengiriman</a></li>
                   </ul>
                 </li>

@@ -1,0 +1,12 @@
+SELECT 
+ps.kode,
+pl.nama_toko,
+pl.alamat,
+u.nama,
+b.nama_barang
+FROM detail_pesanan dps
+LEFT JOIN pesanan ps ON dps.id_pesanan=ps.id_pesanan
+LEFT JOIN users u ON ps.id=u.id
+LEFT JOIN pelanggan pl ON ps.id_toko=pl.id_toko
+LEFT JOIN barang b ON dps.id_barang=b.id_barang
+
