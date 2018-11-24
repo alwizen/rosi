@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2018 at 01:30 PM
+-- Generation Time: Nov 24, 2018 at 08:06 AM
 -- Server version: 10.0.36-MariaDB-0ubuntu0.16.04.1
 -- PHP Version: 7.2.5-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`id`, `uname`, `pass`, `foto`) VALUES
 
 CREATE TABLE `barang` (
   `id_barang` int(11) NOT NULL,
-  `nama` text NOT NULL,
+  `nama_barang` varchar(100) NOT NULL,
   `harga` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL,
   `sisa` int(11) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `barang` (
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama`, `harga`, `jumlah`, `sisa`, `tgl_masuk`, `kadaluarsa`) VALUES
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga`, `jumlah`, `sisa`, `tgl_masuk`, `kadaluarsa`) VALUES
 (14, 'roti unibis', 6500, 350, 20, '2018-11-01', '2018-11-06'),
 (17, 'tim tam', 6000, 792, 10, '2018-11-06', '2018-11-22'),
 (19, 'tic tac', 4000, 2, 24, '2018-11-01', '2018-11-23'),
@@ -135,7 +135,15 @@ CREATE TABLE `pelanggan` (
 INSERT INTO `pelanggan` (`id_toko`, `nama_toko`, `pemilik`, `alamat`, `no_tlp`) VALUES
 (1, 'Mugi Berkah', 'Solihin', 'jl Ottoiskandardinata GG18', '085701344456'),
 (2, 'Moro Seneng', 'Subandi', 'Jl Garuda 89 Pekalongan', '085741909'),
-(3, '', '', '', '');
+(3, 'Slamet BU', 'dol', 'Jl Sumombito', '99230920392'),
+(4, 'Toko Lala', 'Lalapo', 'Jl Progo No 290 Pekalogan', '098623673'),
+(5, 'Toko Global', 'Gomblo', 'Jl. Seruni No. 66A Pekalongan, Poncol', '085701366890'),
+(6, 'Dekoro Jaya', 'Royhin', 'Jl. H. Agus Salim no. 5 Pekalongan', '085741909'),
+(7, 'Istana', 'Topik', 'Jl. Gajah Mada No. 23-25, Pekalongan', '08570136688'),
+(8, 'Kerinci jaya', 'Wiranto', 'Jl. Kurinci No. 34 Pekalongan, Bendan', '085701366890'),
+(9, 'Reyhan Sembako', 'Reyhan', 'Jl. Diponegoro No. 19, Kota Pekalongan', '0987878777'),
+(10, 'Toko Sodikin', 'Sodikin', 'Jl Diponegoro No 19 A, Pekalongan', '0812678787'),
+(11, 'AKB', 'Aris', 'Jl. Mataram No.1, Pekalongan', '0812678787');
 
 -- --------------------------------------------------------
 
@@ -165,20 +173,61 @@ INSERT INTO `pengeluaran` (`id`, `tanggal`, `keperluan`, `nama`, `jumlah`) VALUE
 --
 
 CREATE TABLE `pesanan` (
-  `id` int(11) NOT NULL,
-  `nama_pelanggan` varchar(100) NOT NULL,
-  `nama_barang` varchar(100) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `status` enum('Terkirim','Pending','','') NOT NULL
+  `id_pesanan` int(11) NOT NULL,
+  `kode` char(20) NOT NULL,
+  `sales` varchar(100) NOT NULL,
+  `id_toko` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`id`, `nama_pelanggan`, `nama_barang`, `jumlah`, `status`) VALUES
-(1, 'Prabowo', 'DanCow', 120, 'Pending'),
-(2, 'Jokowi', 'Milo', 2000, 'Terkirim');
+INSERT INTO `pesanan` (`id_pesanan`, `kode`, `sales`, `id_toko`, `tanggal`, `status`) VALUES
+(5, 'PJ-A43E5', 'Admin', 1, '2018-11-08', 0),
+(6, 'PJ-097FC', 'Admin', 1, '2018-11-01', 0),
+(7, 'PJ-BE82E', 'Admin', 2, '2018-11-22', 0),
+(8, 'PJ-5C90F', 'Helper', 1, '2018-11-01', 0),
+(9, 'PJ-DDA10', 'Helper', 3, '2018-11-23', 0),
+(10, 'PJ-BD6F0', 'Sales', 4, '2018-11-23', 0),
+(11, 'PJ-6A17C', 'Sales', 8, '2018-11-23', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesanan_detail`
+--
+
+CREATE TABLE `pesanan_detail` (
+  `id_detpesanan` int(11) NOT NULL,
+  `id_pesanan` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pesanan_detail`
+--
+
+INSERT INTO `pesanan_detail` (`id_detpesanan`, `id_pesanan`, `id_barang`, `harga`, `jumlah`) VALUES
+(6, 5, 17, 6000, 2),
+(7, 5, 19, 4000, 3),
+(8, 6, 14, 6500, 3),
+(9, 7, 19, 4000, 23),
+(10, 7, 23, 13000, 2),
+(11, 8, 20, 3000, 3),
+(12, 9, 23, 13000, 8),
+(13, 9, 24, 4000, 9),
+(14, 9, 24, 4000, 90),
+(15, 10, 29, 15000, 80),
+(16, 11, 33, 20000, 2),
+(17, 11, 28, 17000, 2),
+(18, 11, 20, 3000, 10),
+(19, 11, 27, 60000, 10),
+(20, 11, 32, 5000, 10);
 
 -- --------------------------------------------------------
 
@@ -246,7 +295,13 @@ ALTER TABLE `pengeluaran`
 -- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_pesanan`);
+
+--
+-- Indexes for table `pesanan_detail`
+--
+ALTER TABLE `pesanan_detail`
+  ADD PRIMARY KEY (`id_detpesanan`);
 
 --
 -- Indexes for table `users`
@@ -277,7 +332,7 @@ ALTER TABLE `barang_laku`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_toko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_toko` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `pengeluaran`
 --
@@ -287,7 +342,12 @@ ALTER TABLE `pengeluaran`
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `pesanan_detail`
+--
+ALTER TABLE `pesanan_detail`
+  MODIFY `id_detpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `users`
 --
